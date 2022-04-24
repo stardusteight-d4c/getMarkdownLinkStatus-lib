@@ -7,7 +7,7 @@ const caminho = process.argv;
 async function processaTexto(caminhoDeArquivo) {
     const resultado = await leiaArquivo(caminhoDeArquivo[2]);
     if (caminho[3] === 'validar') {
-        console.log(chalk.blue(`Links validados: \n`), validarURLs(resultado));
+        console.log(chalk.yellow(`Links validados: \n`), await validarURLs(resultado));
     } else {
         console.log(chalk.yellow(`Lista de links:\n`), resultado);
     }
